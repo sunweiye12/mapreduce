@@ -37,7 +37,6 @@ public class MyRecordReader extends RecordReader<Text, BytesWritable> {
     public void initialize(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
         //开流
         fs = (FileSplit) split;
-
         FileSystem fileSystem = FileSystem.get(context.getConfiguration());
         inputStream = fileSystem.open(fs.getPath());
     }
@@ -57,7 +56,6 @@ public class MyRecordReader extends RecordReader<Text, BytesWritable> {
             //填充Value
             byte[] buffer = new byte[(int) fs.getLength()];
             int read = inputStream.read(buffer);
-
             value.set(buffer, 0, buffer.length);
 
             //标记文件读完
@@ -65,7 +63,6 @@ public class MyRecordReader extends RecordReader<Text, BytesWritable> {
             return true;
         } else {
             return false;
-
         }
     }
 

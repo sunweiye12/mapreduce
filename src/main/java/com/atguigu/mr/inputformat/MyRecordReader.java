@@ -52,12 +52,10 @@ public class MyRecordReader extends RecordReader<Text, BytesWritable> {
             //读取这个文件，用流
             //填充key
             key.set(fs.getPath().toString());
-
             //填充Value
             byte[] buffer = new byte[(int) fs.getLength()];
             int read = inputStream.read(buffer);
             value.set(buffer, 0, buffer.length);
-
             //标记文件读完
             isRead = true;
             return true;

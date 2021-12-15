@@ -26,6 +26,7 @@ public class NewFlowDriver {
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(FlowBean.class);
 
+        // reduce并行度设置成5，根据mypartition的分区规则来分区
         job.setNumReduceTasks(5);
         job.setPartitionerClass(MyPartitioner.class);
 

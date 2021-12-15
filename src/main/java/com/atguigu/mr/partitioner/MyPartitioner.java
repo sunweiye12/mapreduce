@@ -3,7 +3,9 @@ package com.atguigu.mr.partitioner;
 import com.atguigu.mr.flow.FlowBean;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;
-
+/*
+    手机号136、137、138、139开头都分别放到一个独立的4个文件中，其他开头的放到一个文件中。
+ */
 public class MyPartitioner extends Partitioner<Text, FlowBean> {
 
     /**

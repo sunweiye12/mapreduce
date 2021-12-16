@@ -33,7 +33,7 @@ public class NewFlowDriver {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);
 
-        FileInputFormat.setInputPaths(job, new Path("file:///d:/input"));
+        FileInputFormat.setInputPaths(job, new Path("file:///d:/input1"));
         FileOutputFormat.setOutputPath(job, new Path("file:///d:/output"));
 
         boolean b = job.waitForCompletion(true);
